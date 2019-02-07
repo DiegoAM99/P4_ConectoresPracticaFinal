@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextFieldDNI" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldNombre" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldApellidos" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldCorreo" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldNum_Contacto" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextFieldDNI_Cliente" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldID_Producto" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldMarca_Producto" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldNombre_Producto" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldFecha_Venta" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jButtonAnnadir_Cliente" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldDireccion" alignment="0" pref="148" max="32767" attributes="0"/>
+                              <Component id="jButtonModificar_Cliente" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButtonEliminar_Cliente" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jTextFieldfecha_venta" pref="157" max="32767" attributes="0"/>
+                          <Component id="jTextFieldmarca" pref="157" max="32767" attributes="0"/>
+                          <Component id="jTextFieldnombre_producto" pref="157" max="32767" attributes="0"/>
+                          <Component id="jTextFieldID_producto" max="32767" attributes="0"/>
+                          <Component id="jButtonAnnadir_Producto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButtonModificar_Producto" max="32767" attributes="0"/>
+                          <Component id="jButtonEliminar_Producto" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="548" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jButtonMostrarTablaClientes" max="32767" attributes="0"/>
+                          <Component id="jButtonMostrarTablaCliente_Producto" max="32767" attributes="0"/>
+                          <Component id="jButtonMostrarTablaProducto" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="301" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jButtonMostrarTablaClientes" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButtonMostrarTablaCliente_Producto" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButtonMostrarTablaProducto" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextFieldDNI" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextFieldDNI_Cliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldID_producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextFieldNombre" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextFieldID_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldnombre_producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextFieldApellidos" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldMarca_Producto" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldmarca" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextFieldCorreo" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNombre_Producto" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldfecha_venta" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextFieldNum_Contacto" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextFieldFecha_Venta" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonAnnadir_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextFieldDireccion" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonModificar_Producto" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jButtonAnnadir_Cliente" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonEliminar_Producto" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButtonModificar_Cliente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButtonEliminar_Cliente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="jTable1">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="0" rowCount="4"/>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0"/>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="jButtonMostrarTablaClientes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mostrar Tabla Clientes"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonMostrarTablaClientesMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonMostrarTablaCliente_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mostrar Tabla Cliente_Producto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonMostrarTablaCliente_ProductoMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonMostrarTablaProducto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mostrar Tabla Producto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonMostrarTablaProductoMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldDNI">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DNI"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNombre">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nombre"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldApellidos">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Apellidos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldCorreo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Correo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNum_Contacto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="num_Contacto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldDireccion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Direccion"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldDNI_Cliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DNI_cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldID_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="id_producto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldMarca_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="marca_producto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNombre_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="nombre_producto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldFecha_Venta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="fecha_venta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldID_producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="id_producto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldnombre_producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="nombre_producto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldmarca">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="marca"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldfecha_venta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="fecha_venta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAnnadir_Cliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="A&#xf1;adir Cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonModificar_Cliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modificar Cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonEliminar_Cliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eliminar Cliente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAnnadir_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="A&#xf1;adir Producto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonModificar_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modificar Producto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonEliminar_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eliminar Producto"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
