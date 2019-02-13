@@ -1,7 +1,9 @@
 package codigo;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -127,16 +129,46 @@ public class Conectores extends javax.swing.JFrame {
         jTextFieldfecha_venta.setText("fecha_venta");
 
         jButtonAnnadir_Cliente.setText("Añadir Cliente");
+        jButtonAnnadir_Cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonAnnadir_ClienteMousePressed(evt);
+            }
+        });
 
         jButtonModificar_Cliente.setText("Modificar Cliente");
+        jButtonModificar_Cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonModificar_ClienteMousePressed(evt);
+            }
+        });
 
         jButtonEliminar_Cliente.setText("Eliminar Cliente");
+        jButtonEliminar_Cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonEliminar_ClienteMousePressed(evt);
+            }
+        });
 
         jButtonAnnadir_Producto.setText("Añadir Producto");
+        jButtonAnnadir_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonAnnadir_ProductoMousePressed(evt);
+            }
+        });
 
         jButtonModificar_Producto.setText("Modificar Producto");
+        jButtonModificar_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonModificar_ProductoMousePressed(evt);
+            }
+        });
 
         jButtonEliminar_Producto.setText("Eliminar Producto");
+        jButtonEliminar_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonEliminar_ProductoMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,6 +177,9 @@ public class Conectores extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 99, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -175,52 +210,45 @@ public class Conectores extends javax.swing.JFrame {
                             .addComponent(jButtonAnnadir_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonModificar_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonEliminar_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
+                        .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonMostrarTablaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonMostrarTablaProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonMostrarTablaCliente_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonMostrarTablaProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jButtonMostrarTablaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jButtonMostrarTablaClientes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonMostrarTablaCliente_Producto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonMostrarTablaProducto)))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldDNI_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextFieldID_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldID_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldnombre_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextFieldnombre_producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonMostrarTablaClientes)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldMarca_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldmarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTextFieldApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldMarca_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldmarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonMostrarTablaCliente_Producto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldNombre_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldfecha_venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextFieldfecha_venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonMostrarTablaProducto)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldNum_Contacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -239,7 +267,7 @@ public class Conectores extends javax.swing.JFrame {
                 .addComponent(jButtonModificar_Cliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonEliminar_Cliente)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -286,16 +314,16 @@ public class Conectores extends javax.swing.JFrame {
             modelo.addColumn("marca_producto");
             modelo.addColumn("nombre_producto");
             modelo.addColumn("fecha_venta");
-           
+            modelo.addColumn("Direccion");
             
             while(rs.next()){
-                Object[] obj1 = new Object[5];
+                Object[] obj1 = new Object[6];
                 obj1[0] = (rs.getInt(1));
                 obj1[1] = (rs.getString(2));
                 obj1[2] = (rs.getString(3));
-                obj1[3] = (rs.getBlob(4));
-                obj1[3] = (rs.getBlob(5));
-                
+                obj1[3] = (rs.getString(4));
+                obj1[4] = (rs.getString(5));
+                obj1[5] = (rs.getString(6));
                 
                 modelo.addRow(obj1);
                 obj1 = null;
@@ -332,6 +360,161 @@ public class Conectores extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jButtonMostrarTablaProductoMousePressed
+
+    private void jButtonAnnadir_ClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAnnadir_ClienteMousePressed
+        try{
+            gc.conn1.setAutoCommit(false);
+            PreparedStatement pst;
+            pst = gc.conn1.prepareStatement("INSERT INTO clientes (DNI, Nombre, Apellidos, Correo, num_Contacto, Direccion) VALUES(?,?,?,?,?,?)");
+            pst.setString(1, jTextFieldDNI.getText());
+            pst.setString(2, jTextFieldNombre.getText());
+            pst.setString(3, jTextFieldApellidos.getText());
+            pst.setString(4, jTextFieldCorreo.getText());
+            pst.setString(5, jTextFieldNum_Contacto.getText());
+            pst.setString(6, jTextFieldDireccion.getText());
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Cliente Guardado");
+            gc.conn1.commit();
+        }
+    catch(SQLException ex){
+            System.out.println("ERROR: al hacer un INSERT");
+            try{
+                if(gc.conn1!=null)
+                    gc.conn1.rollback();
+            }catch(SQLException se2){
+                se2.printStackTrace();
+            }
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Cliente Duplicado");
+    }  
+    }//GEN-LAST:event_jButtonAnnadir_ClienteMousePressed
+
+    private void jButtonModificar_ClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificar_ClienteMousePressed
+        try{
+            gc.conn1.setAutoCommit(false);
+            PreparedStatement pst;
+            pst = gc.conn1.prepareStatement("Update clientes  SET  Nombre =?, Apellidos =?, Correo =?, num_Contacto =?, Direccion =?  WHERE DNI=?");
+            pst.setString(1, jTextFieldNombre.getText());
+            pst.setString(2, jTextFieldApellidos.getText());
+            pst.setString(3, jTextFieldCorreo.getText());
+            pst.setString(4, jTextFieldNum_Contacto.getText());
+            pst.setString(5, jTextFieldDireccion.getText());
+            pst.setString(6, jTextFieldDNI.getText());
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Cliente Modificado");
+            gc.conn1.commit();
+        }
+    catch(SQLException ex){
+            System.out.println("ERROR: al Modificar");
+            try{
+                if(gc.conn1!=null)
+                    gc.conn1.rollback();
+            }catch(SQLException se2){
+                se2.printStackTrace();
+            }
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Cliente No Modificado");
+    }
+    }//GEN-LAST:event_jButtonModificar_ClienteMousePressed
+
+    private void jButtonEliminar_ClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEliminar_ClienteMousePressed
+        try{
+            gc.conn1.setAutoCommit(false);
+            PreparedStatement pst;
+            pst = gc.conn1.prepareStatement("DELETE FROM clientes  WHERE DNI=?");
+            pst.setInt(1, Integer.parseInt(jTextFieldDNI.getText()));
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Cliente Borrado");
+            gc.conn1.commit();
+        }
+    catch(SQLException ex){
+            System.out.println("ERROR: al Borrar");
+            try{
+                if(gc.conn1!=null)
+                    gc.conn1.rollback();
+            }catch(SQLException se2){
+                se2.printStackTrace();
+            }
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Cliente No Eliminado");
+    }
+    }//GEN-LAST:event_jButtonEliminar_ClienteMousePressed
+
+    private void jButtonAnnadir_ProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAnnadir_ProductoMousePressed
+        try{
+            gc.conn1.setAutoCommit(false);
+            PreparedStatement pst;
+            pst = gc.conn1.prepareStatement("INSERT INTO producto (id_producto, nombre_producto, marca, fecha_venta) VALUES(?,?,?,?)");
+            pst.setString(1, jTextFieldID_producto.getText());
+            pst.setString(2, jTextFieldnombre_producto.getText());
+            pst.setString(3, jTextFieldmarca.getText());
+            pst.setString(4, jTextFieldfecha_venta.getText());
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Producto Guardado");
+            gc.conn1.commit();
+        }
+    catch(SQLException ex){
+            System.out.println("ERROR: al hacer un INSERT");
+            try{
+                if(gc.conn1!=null)
+                    gc.conn1.rollback();
+            }catch(SQLException se2){
+                se2.printStackTrace();
+            }
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Producto Duplicado");
+    }
+    }//GEN-LAST:event_jButtonAnnadir_ProductoMousePressed
+
+    private void jButtonModificar_ProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonModificar_ProductoMousePressed
+        try{
+            gc.conn1.setAutoCommit(false);
+            PreparedStatement pst;
+            pst = gc.conn1.prepareStatement("Update producto  SET  nombre_producto =?, marca =?, fecha_venta =?,  WHERE id_producto =?");
+            pst.setString(1, jTextFieldnombre_producto.getText());
+            pst.setString(2, jTextFieldmarca.getText());
+            pst.setString(3, jTextFieldfecha_venta.getText());
+            pst.setString(4, jTextFieldNum_Contacto.getText());
+            pst.setString(5, jTextFieldID_producto.getText());
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Producto Modificado");
+            gc.conn1.commit();
+        }
+    catch(SQLException ex){
+            System.out.println("ERROR: al Modificar");
+            try{
+                if(gc.conn1!=null)
+                    gc.conn1.rollback();
+            }catch(SQLException se2){
+                se2.printStackTrace();
+            }
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Producto No Modificado");
+    }
+    }//GEN-LAST:event_jButtonModificar_ProductoMousePressed
+
+    private void jButtonEliminar_ProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEliminar_ProductoMousePressed
+        try{
+            gc.conn1.setAutoCommit(false);
+            PreparedStatement pst;
+            pst = gc.conn1.prepareStatement("DELETE FROM producto  WHERE id_producto=?");
+            pst.setInt(1, Integer.parseInt(jTextFieldID_producto.getText()));
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Cliente Borrado");
+            gc.conn1.commit();
+        }
+    catch(SQLException ex){
+            System.out.println("ERROR: al Borrar");
+            try{
+                if(gc.conn1!=null)
+                    gc.conn1.rollback();
+            }catch(SQLException se2){
+                se2.printStackTrace();
+            }
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Cliente No Eliminado");
+    }
+    }//GEN-LAST:event_jButtonEliminar_ProductoMousePressed
 
     /**
      * @param args the command line arguments

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -26,6 +26,10 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="776" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="99" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -62,15 +66,11 @@
                           <Component id="jButtonModificar_Producto" max="32767" attributes="0"/>
                           <Component id="jButtonEliminar_Producto" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="548" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButtonMostrarTablaClientes" max="32767" attributes="0"/>
+                          <Component id="jButtonMostrarTablaProducto" max="32767" attributes="0"/>
                           <Component id="jButtonMostrarTablaCliente_Producto" max="32767" attributes="0"/>
-                          <Component id="jButtonMostrarTablaProducto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButtonMostrarTablaClientes" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -81,20 +81,8 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="301" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jButtonMostrarTablaClientes" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButtonMostrarTablaCliente_Producto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButtonMostrarTablaProducto" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="301" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jTextFieldDNI" min="-2" max="-2" attributes="0"/>
@@ -103,25 +91,32 @@
                       <Component id="jTextFieldID_producto" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jTextFieldNombre" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jTextFieldID_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldnombre_producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonMostrarTablaClientes" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextFieldApellidos" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldMarca_Producto" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldmarca" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jTextFieldApellidos" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldMarca_Producto" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldmarca" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jButtonMostrarTablaCliente_Producto" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jTextFieldCorreo" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldNombre_Producto" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldfecha_venta" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextFieldfecha_venta" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonMostrarTablaProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -145,7 +140,7 @@
               <Component id="jButtonModificar_Cliente" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jButtonEliminar_Cliente" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -276,31 +271,49 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="A&#xf1;adir Cliente"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonAnnadir_ClienteMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonModificar_Cliente">
       <Properties>
         <Property name="text" type="java.lang.String" value="Modificar Cliente"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonModificar_ClienteMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonEliminar_Cliente">
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar Cliente"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonEliminar_ClienteMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonAnnadir_Producto">
       <Properties>
         <Property name="text" type="java.lang.String" value="A&#xf1;adir Producto"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonAnnadir_ProductoMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonModificar_Producto">
       <Properties>
         <Property name="text" type="java.lang.String" value="Modificar Producto"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonModificar_ProductoMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonEliminar_Producto">
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar Producto"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonEliminar_ProductoMousePressed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
