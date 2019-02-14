@@ -27,34 +27,33 @@
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="776" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="99" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="857" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextFieldDNI" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldNombre" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldApellidos" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldCorreo" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldNum_Contacto" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextFieldDNI_Cliente" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldID_Producto" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldMarca_Producto" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldNombre_Producto" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldFecha_Venta" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jTextFieldDNI" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="jTextFieldNombre" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="jTextFieldApellidos" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="jTextFieldCorreo" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                          <Component id="jTextFieldNum_Contacto" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Component id="jButtonAnnadir_Cliente" alignment="0" max="32767" attributes="0"/>
                               <Component id="jTextFieldDireccion" alignment="0" pref="148" max="32767" attributes="0"/>
                               <Component id="jButtonModificar_Cliente" alignment="0" max="32767" attributes="0"/>
                               <Component id="jButtonEliminar_Cliente" alignment="1" max="32767" attributes="0"/>
                           </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jTextFieldDNI_Cliente" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldID_Producto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldMarca_Producto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldNombre_Producto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldFecha_Venta" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButtonAnnadirCliente_Producto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButtonModificarCliente_Producto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButtonEliminarCliente_Producto" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -69,7 +68,7 @@
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jButtonMostrarTablaProducto" max="32767" attributes="0"/>
-                          <Component id="jButtonMostrarTablaCliente_Producto" max="32767" attributes="0"/>
+                          <Component id="jButtonMostrarTablaCliente_Producto" pref="288" max="32767" attributes="0"/>
                           <Component id="jButtonMostrarTablaClientes" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -128,16 +127,25 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextFieldDireccion" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextFieldDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonAnnadirCliente_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="jButtonModificar_Producto" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jButtonAnnadir_Cliente" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButtonEliminar_Producto" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButtonEliminar_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonModificarCliente_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButtonModificar_Cliente" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jButtonModificar_Cliente" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonEliminarCliente_Producto" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jButtonEliminar_Cliente" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -313,6 +321,31 @@
       </Properties>
       <Events>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonEliminar_ProductoMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAnnadirCliente_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="A&#xf1;adir Cliente_Producto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonAnnadirCliente_ProductoMousePressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAnnadirCliente_ProductoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonModificarCliente_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modificar Cliente_Producto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonModificarCliente_ProductoMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonEliminarCliente_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eliminar Cliente_Producto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonEliminarCliente_ProductoMousePressed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -78,11 +78,11 @@ public class GestorConexion {
     public void consulta_Statement(){
         try{
             Statement sta = conn1.createStatement();
-            String query = "SELECT * FROM album WHERE titulo like 'B%'";
+            String query = "SELECT DNI,nombre, apellidos FROM clientes WHERE DNI like 'B%'";
             ResultSet rs = sta.executeQuery(query);
             
             while(rs.next()){
-                System.out.println("ID -"+ rs.getInt("id")+ "Titulo"+ rs.getString("titulo") + "Autor"+ rs.getString("autor"));
+                System.out.println("DNI -"+ rs.getString("DNI")+ "nombre"+ rs.getString("nombre") + "Apellidos"+ rs.getString("apellidos"));
             }
             rs.close();
             sta.close();
@@ -92,20 +92,6 @@ public class GestorConexion {
         }
     }
     
-    public void insertar_columna(){
-     try{
-            //Crea un statement
-            Statement sta = conn1.createStatement();
-            
-            //Ejecuta la insercion
-            sta.executeUpdate("ALTER TABLE album ADD Foto BLOB" + "VALUES (D:\\DOCUMENTOS\\NetBeansProjects\\P1_Conectores\\src\\img\\trailer.jpg");
-            //Cierra el statement
-            sta.close();
-        }catch(SQLException ex){
-            System.out.println("ERROR: al hacer un ALTER TABLE");
-            ex.printStackTrace();
-        }
-}
     public ResultSet Mostrar_TablaClientes(){
         try{
             Statement sta = conn1.createStatement();
