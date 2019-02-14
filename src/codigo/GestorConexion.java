@@ -26,7 +26,6 @@ public class GestorConexion {
     
     Connection conn1;
     
-    
     public GestorConexion(){
         conn1 = null;
         
