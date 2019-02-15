@@ -64,8 +64,12 @@ public class Conectores extends javax.swing.JFrame {
         jButtonAnnadirCliente_Producto = new javax.swing.JButton();
         jButtonModificarCliente_Producto = new javax.swing.JButton();
         jButtonEliminarCliente_Producto = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButtonBuscar_Cliente = new javax.swing.JButton();
         jTextFieldBuscarCliente = new javax.swing.JTextField();
+        jTextFieldBuscarProducto = new javax.swing.JTextField();
+        jButtonBuscar_Producto = new javax.swing.JButton();
+        jTextFieldBuscarCliente_Producto = new javax.swing.JTextField();
+        jButtonBuscar_Cliente_Producto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -201,15 +205,29 @@ public class Conectores extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonBuscar_Cliente.setText("Buscar Cliente");
+        jButtonBuscar_Cliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton1MousePressed(evt);
+                jButtonBuscar_ClienteMousePressed(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBuscar_Cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonBuscar_ClienteActionPerformed(evt);
+            }
+        });
+
+        jButtonBuscar_Producto.setText("Buscar Producto");
+        jButtonBuscar_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonBuscar_ProductoMousePressed(evt);
+            }
+        });
+
+        jButtonBuscar_Cliente_Producto.setText("Buscar Cliente_Producto");
+        jButtonBuscar_Cliente_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonBuscar_Cliente_ProductoMousePressed(evt);
             }
         });
 
@@ -222,7 +240,7 @@ public class Conectores extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 867, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 79, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,13 +274,19 @@ public class Conectores extends javax.swing.JFrame {
                             .addComponent(jButtonEliminar_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextFieldBuscarCliente)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))
                             .addComponent(jButtonMostrarTablaProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonMostrarTablaCliente_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                            .addComponent(jButtonMostrarTablaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jButtonMostrarTablaCliente_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonMostrarTablaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTextFieldBuscarCliente_Producto, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldBuscarProducto, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldBuscarCliente))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButtonBuscar_Cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonBuscar_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonBuscar_Cliente_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -301,14 +325,26 @@ public class Conectores extends javax.swing.JFrame {
                                 .addComponent(jTextFieldFecha_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButtonAnnadir_Producto)
                                 .addComponent(jTextFieldBuscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton1)))
+                                .addComponent(jButtonBuscar_Cliente))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jButtonMostrarTablaClientes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButtonAnnadirCliente_Producto))
-                            .addComponent(jButtonModificar_Producto))
+                        .addComponent(jButtonMostrarTablaCliente_Producto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonMostrarTablaProducto)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonAnnadirCliente_Producto))
+                    .addComponent(jButtonModificar_Producto)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextFieldBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonBuscar_Producto)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonAnnadir_Cliente)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -320,13 +356,9 @@ public class Conectores extends javax.swing.JFrame {
                             .addComponent(jButtonEliminarCliente_Producto))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonEliminar_Cliente))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jButtonMostrarTablaClientes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonMostrarTablaCliente_Producto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonMostrarTablaProducto)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextFieldBuscarCliente_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonBuscar_Cliente_Producto)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -529,12 +561,11 @@ public class Conectores extends javax.swing.JFrame {
         try{
             gc.conn1.setAutoCommit(false);
             PreparedStatement pst;
-            pst = gc.conn1.prepareStatement("Update producto  SET  nombre_producto =?, marca =?, fecha_venta =?,  WHERE id_producto =?");
+            pst = gc.conn1.prepareStatement("Update producto  SET  nombre_producto =?, marca =?, fecha_venta =?,  WHERE id_producto ='?'");
             pst.setString(1, jTextFieldnombre_producto.getText());
             pst.setString(2, jTextFieldmarca.getText());
             pst.setString(3, jTextFieldfecha_venta.getText());
-            pst.setString(4, jTextFieldNum_Contacto.getText());
-            pst.setString(5, jTextFieldID_producto.getText());
+            pst.setString(4, jTextFieldID_producto.getText());
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Producto Modificado");
             gc.conn1.commit();
@@ -656,22 +687,115 @@ public class Conectores extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_jButtonEliminarCliente_ProductoMousePressed
 
-    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+    private void jButtonBuscar_ClienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBuscar_ClienteMousePressed
         PreparedStatement pst;
         ResultSet rs;
+        DefaultTableModel modelo = new DefaultTableModel();
+        jTable1.setModel(modelo);
         try{
-            pst = gc.conn1.prepareStatement("SELECT * FROM clientes WHERE DNI=?");
+            pst = gc.conn1.prepareStatement("SELECT * FROM clientes WHERE DNI=? OR Nombre=?");
             pst.setString(1,jTextFieldBuscarCliente.getText());
+            pst.setString(2,jTextFieldBuscarCliente.getText());
             rs = pst.executeQuery();
+            modelo.addColumn("DNI");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellidos");
+            modelo.addColumn("Correo");
+            modelo.addColumn("num_Contacto");
+            modelo.addColumn("Direccion");
             
+            if(rs.next()){
+                Object[] obj1 = new Object[6];
+                obj1[0] = (rs.getInt(1));
+                obj1[1] = (rs.getString(2));
+                obj1[2] = (rs.getString(3));
+                obj1[3] = (rs.getString(4));
+                obj1[4] = (rs.getString(5));
+                obj1[5] = (rs.getString(6));
+                
+                modelo.addRow(obj1);
+                obj1 = null;
+            }else{
+                JOptionPane.showMessageDialog(null, "No existe este cliente con el DNI");
+            }  
         }catch(SQLException e){
             e.printStackTrace();
         }
-    }//GEN-LAST:event_jButton1MousePressed
+    }//GEN-LAST:event_jButtonBuscar_ClienteMousePressed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonBuscar_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscar_ClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonBuscar_ClienteActionPerformed
+
+    private void jButtonBuscar_ProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBuscar_ProductoMousePressed
+        PreparedStatement pst;
+        ResultSet rs;
+        DefaultTableModel modelo = new DefaultTableModel();
+        jTable1.setModel(modelo);
+        try{
+            pst = gc.conn1.prepareStatement("SELECT * FROM producto WHERE id_producto=? OR nombre_producto=?");
+            pst.setString(1,jTextFieldBuscarProducto.getText());
+            pst.setString(2,jTextFieldBuscarProducto.getText());
+            rs = pst.executeQuery();
+            modelo.addColumn("id_producto");
+            modelo.addColumn("nombre_producto");
+            modelo.addColumn("marca");
+            modelo.addColumn("fecha_venta");
+            
+            
+            if(rs.next()){
+                Object[] obj1 = new Object[4];
+                obj1[0] = (rs.getInt(1));
+                obj1[1] = (rs.getString(2));
+                obj1[2] = (rs.getString(3));
+                obj1[3] = (rs.getString(4));
+              
+                
+                modelo.addRow(obj1);
+                obj1 = null;
+            
+            }else{
+                JOptionPane.showMessageDialog(null, "No existe este producto con el ID");
+            }  
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButtonBuscar_ProductoMousePressed
+
+    private void jButtonBuscar_Cliente_ProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonBuscar_Cliente_ProductoMousePressed
+        PreparedStatement pst;
+        ResultSet rs;
+        DefaultTableModel modelo = new DefaultTableModel();
+        jTable1.setModel(modelo);
+        try{
+            pst = gc.conn1.prepareStatement("SELECT * FROM cliente_producto WHERE id_producto=? OR DNI_cliente=?");
+            pst.setString(1,jTextFieldBuscarCliente_Producto.getText());
+            pst.setString(2,jTextFieldBuscarCliente_Producto.getText());
+            rs = pst.executeQuery();
+            modelo.addColumn("DNI_cliente");
+            modelo.addColumn("id_producto");
+            modelo.addColumn("marca_producto");
+            modelo.addColumn("nombre_producto");
+            modelo.addColumn("fecha_venta");
+            
+            if(rs.next()){
+                Object[] obj1 = new Object[5];
+                obj1[0] = (rs.getInt(1));
+                obj1[1] = (rs.getString(2));
+                obj1[2] = (rs.getString(3));
+                obj1[3] = (rs.getString(4));
+                obj1[4] = (rs.getString(5));
+                
+                
+                modelo.addRow(obj1);
+                obj1 = null;
+            }else{
+                JOptionPane.showMessageDialog(null, "No existe ni este cliente con el DNI ni este producto con ID");
+            }  
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButtonBuscar_Cliente_ProductoMousePressed
 
     /**
      * @param args the command line arguments
@@ -709,10 +833,12 @@ public class Conectores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAnnadirCliente_Producto;
     private javax.swing.JButton jButtonAnnadir_Cliente;
     private javax.swing.JButton jButtonAnnadir_Producto;
+    private javax.swing.JButton jButtonBuscar_Cliente;
+    private javax.swing.JButton jButtonBuscar_Cliente_Producto;
+    private javax.swing.JButton jButtonBuscar_Producto;
     private javax.swing.JButton jButtonEliminarCliente_Producto;
     private javax.swing.JButton jButtonEliminar_Cliente;
     private javax.swing.JButton jButtonEliminar_Producto;
@@ -726,6 +852,8 @@ public class Conectores extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextFieldApellidos;
     private javax.swing.JTextField jTextFieldBuscarCliente;
+    private javax.swing.JTextField jTextFieldBuscarCliente_Producto;
+    private javax.swing.JTextField jTextFieldBuscarProducto;
     private javax.swing.JTextField jTextFieldCorreo;
     private javax.swing.JTextField jTextFieldDNI;
     private javax.swing.JTextField jTextFieldDNI_Cliente;

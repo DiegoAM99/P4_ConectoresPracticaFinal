@@ -28,7 +28,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jScrollPane1" min="-2" pref="867" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -67,14 +67,22 @@
                       </Group>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTextFieldBuscarCliente" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="jButtonMostrarTablaProducto" max="32767" attributes="0"/>
-                          <Component id="jButtonMostrarTablaCliente_Producto" pref="288" max="32767" attributes="0"/>
+                          <Component id="jButtonMostrarTablaCliente_Producto" max="32767" attributes="0"/>
                           <Component id="jButtonMostrarTablaClientes" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jTextFieldBuscarCliente_Producto" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldBuscarProducto" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldBuscarCliente" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jButtonBuscar_Cliente" max="32767" attributes="0"/>
+                                  <Component id="jButtonBuscar_Producto" max="32767" attributes="0"/>
+                                  <Component id="jButtonBuscar_Cliente_Producto" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -124,18 +132,34 @@
                               <Component id="jTextFieldFecha_Venta" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButtonAnnadir_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextFieldBuscarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonBuscar_Cliente" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="jButtonMostrarTablaClientes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextFieldDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButtonAnnadirCliente_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jButtonModificar_Producto" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jButtonMostrarTablaCliente_Producto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButtonMostrarTablaProducto" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextFieldDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonAnnadirCliente_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jButtonModificar_Producto" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextFieldBuscarProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonBuscar_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jButtonAnnadir_Cliente" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -151,13 +175,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButtonEliminar_Cliente" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="jButtonMostrarTablaClientes" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButtonMostrarTablaCliente_Producto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButtonMostrarTablaProducto" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="jTextFieldBuscarCliente_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonBuscar_Cliente_Producto" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="17" max="32767" attributes="0"/>
@@ -360,16 +380,36 @@
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonEliminarCliente_ProductoMousePressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jButtonBuscar_Cliente">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="Buscar Cliente"/>
       </Properties>
       <Events>
-        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MousePressed"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonBuscar_ClienteMousePressed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBuscar_ClienteActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldBuscarCliente">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldBuscarProducto">
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonBuscar_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar Producto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonBuscar_ProductoMousePressed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldBuscarCliente_Producto">
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonBuscar_Cliente_Producto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar Cliente_Producto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonBuscar_Cliente_ProductoMousePressed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
