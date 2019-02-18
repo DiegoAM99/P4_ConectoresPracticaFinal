@@ -31,7 +31,7 @@ public class GestorConexion {
         try{
             String url="jdbc:mysql://localhost:3306/tienda_instrumentos?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";          
             String user = "root";
-            String password = "";
+            String password = "root";
             
             conn1 = (Connection) DriverManager.getConnection(url, user, password);              //Este método sirve para conectarse a la BBDD.
             if(conn1 != null){

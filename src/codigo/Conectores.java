@@ -1,8 +1,10 @@
 package codigo;
 
+import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,6 +26,7 @@ public class Conectores extends javax.swing.JFrame {
      * Creates new form Conectores
      */
     public Conectores() {
+        this.getContentPane().setBackground(Color.YELLOW);
         initComponents();
     }
 
@@ -71,6 +74,9 @@ public class Conectores extends javax.swing.JFrame {
         jButtonBuscar_Producto = new javax.swing.JButton();
         jTextFieldBuscarCliente_Producto = new javax.swing.JTextField();
         jButtonBuscar_Cliente_Producto = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -232,6 +238,17 @@ public class Conectores extends javax.swing.JFrame {
             }
         });
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "Apellidos" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "id_producto", "nombre_producto" }));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI_cliente", "marca_producto", "id_producto" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -241,7 +258,7 @@ public class Conectores extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 867, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 79, Short.MAX_VALUE))
+                        .addGap(0, 92, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -273,16 +290,24 @@ public class Conectores extends javax.swing.JFrame {
                             .addComponent(jButtonAnnadir_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonModificar_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonEliminar_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonMostrarTablaProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonMostrarTablaCliente_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonMostrarTablaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldBuscarCliente_Producto, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldBuscarProducto, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldBuscarCliente))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonMostrarTablaProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonMostrarTablaCliente_Producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonMostrarTablaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 1, Short.MAX_VALUE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldBuscarProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldBuscarCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTextFieldBuscarCliente_Producto))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButtonBuscar_Cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -326,7 +351,8 @@ public class Conectores extends javax.swing.JFrame {
                                 .addComponent(jTextFieldFecha_Venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButtonAnnadir_Producto)
                                 .addComponent(jTextFieldBuscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButtonBuscar_Cliente))))
+                                .addComponent(jButtonBuscar_Cliente)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(jButtonMostrarTablaClientes)
@@ -342,7 +368,8 @@ public class Conectores extends javax.swing.JFrame {
                     .addComponent(jButtonModificar_Producto)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButtonBuscar_Producto)))
+                        .addComponent(jButtonBuscar_Producto)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -359,7 +386,8 @@ public class Conectores extends javax.swing.JFrame {
                         .addComponent(jButtonEliminar_Cliente))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldBuscarCliente_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButtonBuscar_Cliente_Producto)))
+                        .addComponent(jButtonBuscar_Cliente_Producto)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -694,9 +722,8 @@ public class Conectores extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         jTableResultados.setModel(modelo);
         try{
-            pst = gc.conn1.prepareStatement("SELECT * FROM clientes WHERE DNI=? OR Nombre=?");
-            pst.setString(1,jTextFieldBuscarCliente.getText());
-            pst.setString(2,jTextFieldBuscarCliente.getText());
+            pst = gc.conn1.prepareStatement("SELECT * FROM clientes WHERE "+jComboBox1.getSelectedItem()+"=?");
+            pst.setString(1,jTextFieldBuscarCliente.getText()); 
             rs = pst.executeQuery();
             modelo.addColumn("DNI");
             modelo.addColumn("Nombre");
@@ -722,6 +749,7 @@ public class Conectores extends javax.swing.JFrame {
         }catch(SQLException e){
             e.printStackTrace();
         }
+       
     }//GEN-LAST:event_jButtonBuscar_ClienteMousePressed
 
     private void jButtonBuscar_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscar_ClienteActionPerformed
@@ -734,9 +762,8 @@ public class Conectores extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         jTableResultados.setModel(modelo);
         try{
-            pst = gc.conn1.prepareStatement("SELECT * FROM producto WHERE id_producto=? OR nombre_producto=?");
+            pst = gc.conn1.prepareStatement("SELECT * FROM producto WHERE "+jComboBox2.getSelectedItem()+"=?");
             pst.setString(1,jTextFieldBuscarProducto.getText());
-            pst.setString(2,jTextFieldBuscarProducto.getText());
             rs = pst.executeQuery();
             modelo.addColumn("id_producto");
             modelo.addColumn("nombre_producto");
@@ -769,9 +796,8 @@ public class Conectores extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         jTableResultados.setModel(modelo);
         try{
-            pst = gc.conn1.prepareStatement("SELECT * FROM cliente_producto WHERE id_producto=? OR DNI_cliente=?");
+            pst = gc.conn1.prepareStatement("SELECT * FROM cliente_producto WHERE "+jComboBox3.getSelectedItem()+"=?");
             pst.setString(1,jTextFieldBuscarCliente_Producto.getText());
-            pst.setString(2,jTextFieldBuscarCliente_Producto.getText());
             rs = pst.executeQuery();
             modelo.addColumn("DNI_cliente");
             modelo.addColumn("id_producto");
@@ -797,6 +823,10 @@ public class Conectores extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jButtonBuscar_Cliente_ProductoMousePressed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -849,6 +879,9 @@ public class Conectores extends javax.swing.JFrame {
     private javax.swing.JButton jButtonMostrarTablaCliente_Producto;
     private javax.swing.JButton jButtonMostrarTablaClientes;
     private javax.swing.JButton jButtonMostrarTablaProducto;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableResultados;
     private javax.swing.JTextField jTextFieldApellidos;
