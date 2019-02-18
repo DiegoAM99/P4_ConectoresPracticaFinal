@@ -12,7 +12,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 
 /**
  *
- * @author xp
+ * @author Diego Álvarez
  */
 public class PoolConexiones {
     Connection con = null;
@@ -20,7 +20,7 @@ public class PoolConexiones {
         
         BasicDataSource bdSource = new BasicDataSource();
         bdSource.setUrl("jdbc:mysql://localhost:3306/discografica?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
-        bdSource.setUsername("root");
+        bdSource.setUsername("root");               ////Este método sirve para conectarse a la BBDD.
         bdSource.setPassword("root");
         
         try{

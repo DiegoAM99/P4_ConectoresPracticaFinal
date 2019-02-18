@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author xp
+ * @author Diego Álvarez
  */
 public class GestorConexion {
     
@@ -28,13 +28,12 @@ public class GestorConexion {
     
     public GestorConexion(){
         conn1 = null;
-        
         try{
             String url="jdbc:mysql://localhost:3306/tienda_instrumentos?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";          
             String user = "root";
             String password = "";
             
-            conn1 = (Connection) DriverManager.getConnection(url, user, password);
+            conn1 = (Connection) DriverManager.getConnection(url, user, password);              //Este método sirve para conectarse a la BBDD.
             if(conn1 != null){
                 System.out.println("Conectado a tienda_instrumentos...");
             }
@@ -49,53 +48,18 @@ public class GestorConexion {
         try{
             conn1.close();
             System.out.println("Conexion cerrada");
-        
+                                                                //Este método sirve para cerrar la conexión a la BBDD.
         }catch(SQLException ex){
             System.out.println("Error al cerrar la conexion");
         }
     }
     
     
-    public void consulta_preparedStatement(){
-        try{
-            String query = "SELECT * FROM album WHERE titulo like ?";
-            PreparedStatement pst = conn1.prepareStatement(query);
-            pst.setString(1,"B%");
-            ResultSet rs = pst.executeQuery();
-            
-            while(rs.next()){
-                System.out.println("ID -"+ rs.getInt("id")+ "Titulo"+ rs.getString("titulo") + "Autor"+ rs.getString("autor"));
-            }
-            rs.close();
-            pst.close();
-        }catch(SQLException ex){
-            System.out.println("ERROR: al consultar");
-            ex.printStackTrace();
-        }
-    }
-    
-    public void consulta_Statement(){
-        try{
-            Statement sta = conn1.createStatement();
-            String query = "SELECT DNI,nombre, apellidos FROM clientes WHERE DNI like 'B%'";
-            ResultSet rs = sta.executeQuery(query);
-            
-            while(rs.next()){
-                System.out.println("DNI -"+ rs.getString("DNI")+ "nombre"+ rs.getString("nombre") + "Apellidos"+ rs.getString("apellidos"));
-            }
-            rs.close();
-            sta.close();
-        }catch(SQLException ex){
-            System.out.println("ERROR: al consultar");
-            ex.printStackTrace();
-        }
-    }
-    
     public ResultSet Mostrar_TablaClientes(){
         try{
             Statement sta = conn1.createStatement();
             String query = "SELECT * FROM clientes";
-            ResultSet rs = sta.executeQuery(query);
+            ResultSet rs = sta.executeQuery(query);         //Este método sirve para mostrar la tabla clientes
             return rs;
         }catch(SQLException ex){
             System.out.println("ERROR: al consultar");
@@ -109,7 +73,7 @@ public class GestorConexion {
             Statement sta = conn1.createStatement();
             String query = "SELECT * FROM producto";
             ResultSet rs = sta.executeQuery(query);
-            return rs;
+            return rs;                                  //Este método sirve para mostrar la tabla Producto
         }catch(SQLException ex){
             System.out.println("ERROR: al consultar");
             ex.printStackTrace();
@@ -121,7 +85,7 @@ public class GestorConexion {
         try{
             Statement sta = conn1.createStatement();
             String query = "SELECT * FROM cliente_producto";
-            ResultSet rs = sta.executeQuery(query);
+            ResultSet rs = sta.executeQuery(query);             //Este método sirve para mostrar la tabla Cliente_Producto
             return rs;
         }catch(SQLException ex){
             System.out.println("ERROR: al consultar");

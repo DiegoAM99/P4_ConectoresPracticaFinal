@@ -14,9 +14,10 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author xp
+ * @author Diego Álvarez
  */
 public class Conectores extends javax.swing.JFrame {
+    //
     GestorConexion gc = new GestorConexion();
     PoolConexiones pc = new PoolConexiones();
     /**
@@ -36,7 +37,7 @@ public class Conectores extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableResultados = new javax.swing.JTable();
         jButtonMostrarTablaClientes = new javax.swing.JButton();
         jButtonMostrarTablaCliente_Producto = new javax.swing.JButton();
         jButtonMostrarTablaProducto = new javax.swing.JButton();
@@ -73,7 +74,7 @@ public class Conectores extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableResultados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -84,7 +85,7 @@ public class Conectores extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableResultados);
 
         jButtonMostrarTablaClientes.setText("Mostrar Tabla Clientes");
         jButtonMostrarTablaClientes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -368,12 +369,11 @@ public class Conectores extends javax.swing.JFrame {
     private void jButtonMostrarTablaClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonMostrarTablaClientesMousePressed
         ResultSet rs = gc.Mostrar_TablaClientes();
         DefaultTableModel modelo = new DefaultTableModel();
-        jTable1.setModel(modelo);
-        
+        jTableResultados.setModel(modelo);
         try{
             modelo.addColumn("DNI");
             modelo.addColumn("Nombre");
-            modelo.addColumn("Apellidos");
+            modelo.addColumn("Apellidos");          //Esto lo que hace es que te pinta las columnas que tiene la tabla de Clientes
             modelo.addColumn("Correo");
             modelo.addColumn("num_Contacto");
             modelo.addColumn("Direccion");
@@ -383,7 +383,7 @@ public class Conectores extends javax.swing.JFrame {
                 obj1[0] = (rs.getInt(1));
                 obj1[1] = (rs.getString(2));
                 obj1[2] = (rs.getString(3));
-                obj1[3] = (rs.getString(4));
+                obj1[3] = (rs.getString(4));        //Coge los datos que estan insertados en la BBDD y cada dato en la columna que corresponde
                 obj1[4] = (rs.getString(5));
                 obj1[5] = (rs.getString(6));
                 
@@ -398,12 +398,12 @@ public class Conectores extends javax.swing.JFrame {
     private void jButtonMostrarTablaCliente_ProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonMostrarTablaCliente_ProductoMousePressed
         ResultSet rs = gc.Mostrar_TablaClientes_Producto();
         DefaultTableModel modelo = new DefaultTableModel();
-        jTable1.setModel(modelo);
+        jTableResultados.setModel(modelo);
         
         try{
             modelo.addColumn("DNI_cliente");
             modelo.addColumn("id_producto");
-            modelo.addColumn("marca_producto");
+            modelo.addColumn("marca_producto");     //Esto lo que hace es que te pinta las columnas que tiene la tabla de Cliente_Producto
             modelo.addColumn("nombre_producto");
             modelo.addColumn("fecha_venta");
             
@@ -411,7 +411,7 @@ public class Conectores extends javax.swing.JFrame {
                 Object[] obj1 = new Object[5];
                 obj1[0] = (rs.getInt(1));
                 obj1[1] = (rs.getString(2));
-                obj1[2] = (rs.getString(3));
+                obj1[2] = (rs.getString(3));        //Coge los datos que estan insertados en la BBDD y cada dato en la columna que corresponde
                 obj1[3] = (rs.getString(4));
                 obj1[4] = (rs.getString(5));
                 
@@ -427,12 +427,12 @@ public class Conectores extends javax.swing.JFrame {
     private void jButtonMostrarTablaProductoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonMostrarTablaProductoMousePressed
         ResultSet rs = gc.Mostrar_TablaProductos();
         DefaultTableModel modelo = new DefaultTableModel();
-        jTable1.setModel(modelo);
+        jTableResultados.setModel(modelo);
         
         try{
             modelo.addColumn("id_producto");
             modelo.addColumn("nombre_producto");
-            modelo.addColumn("marca");
+            modelo.addColumn("marca");                      //Esto lo que hace es que te pinta las columnas que tiene la tabla de Producto
             modelo.addColumn("fecha_venta");
             
             
@@ -440,7 +440,7 @@ public class Conectores extends javax.swing.JFrame {
                 Object[] obj1 = new Object[4];
                 obj1[0] = (rs.getInt(1));
                 obj1[1] = (rs.getString(2));
-                obj1[2] = (rs.getString(3));
+                obj1[2] = (rs.getString(3));        //Coge los datos que estan insertados en la BBDD y cada dato en la columna que corresponde
                 obj1[3] = (rs.getString(4));
               
                 
@@ -460,8 +460,8 @@ public class Conectores extends javax.swing.JFrame {
             pst.setString(1, jTextFieldDNI.getText());
             pst.setString(2, jTextFieldNombre.getText());
             pst.setString(3, jTextFieldApellidos.getText());
-            pst.setString(4, jTextFieldCorreo.getText());
-            pst.setString(5, jTextFieldNum_Contacto.getText());
+            pst.setString(4, jTextFieldCorreo.getText());                   //Este método lo que hace es que te coge los datos de cada jTextField, y que cuando pulsas
+            pst.setString(5, jTextFieldNum_Contacto.getText());             //la tecla de añadir en este caso para la tabla clientes, te lo inserta en la BBDD
             pst.setString(6, jTextFieldDireccion.getText());
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Cliente Guardado");
@@ -487,8 +487,8 @@ public class Conectores extends javax.swing.JFrame {
             pst = gc.conn1.prepareStatement("Update clientes  SET  Nombre =?, Apellidos =?, Correo =?, num_Contacto =?, Direccion =?  WHERE DNI=?");
             pst.setString(1, jTextFieldNombre.getText());
             pst.setString(2, jTextFieldApellidos.getText());
-            pst.setString(3, jTextFieldCorreo.getText());
-            pst.setString(4, jTextFieldNum_Contacto.getText());
+            pst.setString(3, jTextFieldCorreo.getText());                   //Este método lo que hace es que te coge los datos de cada jTextField, y que cuando pulsas
+            pst.setString(4, jTextFieldNum_Contacto.getText());             //el boton Modificar Cliente, te lo modifica en la BBDD de tal forma que se actualiza la tabla con esa modificación.
             pst.setString(5, jTextFieldDireccion.getText());
             pst.setString(6, jTextFieldDNI.getText());
             pst.executeUpdate();
@@ -515,7 +515,7 @@ public class Conectores extends javax.swing.JFrame {
             pst = gc.conn1.prepareStatement("DELETE FROM clientes  WHERE DNI=?");
             pst.setInt(1, Integer.parseInt(jTextFieldDNI.getText()));
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Cliente Borrado");
+            JOptionPane.showMessageDialog(null, "Cliente Borrado");             //Este método lo que hace es Eliminar la información sobre un cliente en la tabla Clientes en la BBDD.
             gc.conn1.commit();
         }
     catch(SQLException ex){
@@ -538,8 +538,8 @@ public class Conectores extends javax.swing.JFrame {
             pst = gc.conn1.prepareStatement("INSERT INTO producto (id_producto, nombre_producto, marca, fecha_venta) VALUES(?,?,?,?)");
             pst.setString(1, jTextFieldID_producto.getText());
             pst.setString(2, jTextFieldnombre_producto.getText());
-            pst.setString(3, jTextFieldmarca.getText());
-            pst.setString(4, jTextFieldfecha_venta.getText());
+            pst.setString(3, jTextFieldmarca.getText());                    //Este método lo que hace es que te coge los datos de cada jTextField, y que cuando pulsas
+            pst.setString(4, jTextFieldfecha_venta.getText());              //la tecla de añadir en este caso para la tabla producto, te lo inserta en la BBDD
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Producto Guardado");
             gc.conn1.commit();
@@ -563,8 +563,8 @@ public class Conectores extends javax.swing.JFrame {
             PreparedStatement pst;
             pst = gc.conn1.prepareStatement("Update producto  SET  nombre_producto =?, marca =?, fecha_venta =? WHERE id_producto=?");
             pst.setString(1, jTextFieldnombre_producto.getText());
-            pst.setString(2, jTextFieldmarca.getText());
-            pst.setString(3, jTextFieldfecha_venta.getText());
+            pst.setString(2, jTextFieldmarca.getText());                    //Este método lo que hace es que te coge los datos de cada jTextField, y que cuando pulsas
+            pst.setString(3, jTextFieldfecha_venta.getText());              //el boton Modificar Producto, te lo modifica en la BBDD de tal forma que se actualiza la tabla con esa modificación.
             pst.setString(4, jTextFieldID_producto.getText());
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Producto Modificado");
@@ -590,7 +590,7 @@ public class Conectores extends javax.swing.JFrame {
             pst = gc.conn1.prepareStatement("DELETE FROM producto  WHERE id_producto=?");
             pst.setInt(1, Integer.parseInt(jTextFieldID_producto.getText()));
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Producto Borrado");
+            JOptionPane.showMessageDialog(null, "Producto Borrado");        //Este método lo que hace es Eliminar la información sobre un Producto en la tabla Producto en la BBDD.
             gc.conn1.commit();
         }
     catch(SQLException ex){
@@ -616,8 +616,8 @@ public class Conectores extends javax.swing.JFrame {
             PreparedStatement pst;
             pst = gc.conn1.prepareStatement("INSERT INTO cliente_producto (DNI_cliente, id_producto, marca_producto, nombre_producto, fecha_venta) VALUES(?,?,?,?,?)");
             pst.setString(1, jTextFieldDNI_Cliente.getText());
-            pst.setString(2, jTextFieldID_Producto.getText());
-            pst.setString(3, jTextFieldMarca_Producto.getText());
+            pst.setString(2, jTextFieldID_Producto.getText());              //Este método lo que hace es que te coge los datos de cada jTextField, y que cuando pulsas
+            pst.setString(3, jTextFieldMarca_Producto.getText());           //la tecla de añadir en este caso para la tabla cliente_producto, te lo inserta en la BBDD
             pst.setString(4, jTextFieldNombre_Producto.getText());
             pst.setString(5, jTextFieldFecha_Venta.getText());
             pst.executeUpdate();
@@ -644,8 +644,8 @@ public class Conectores extends javax.swing.JFrame {
             pst = gc.conn1.prepareStatement("Update cliente_producto  SET  nombre_producto =?, marca_producto =?, fecha_venta=?  WHERE id_producto =? AND DNI_cliente =?");
             pst.setString(1, jTextFieldNombre_Producto.getText());
             pst.setString(2, jTextFieldMarca_Producto.getText());
-            pst.setString(3, jTextFieldFecha_Venta.getText());
-            pst.setString(4, jTextFieldID_Producto.getText());
+            pst.setString(3, jTextFieldFecha_Venta.getText());              //Este método lo que hace es que te coge los datos de cada jTextField, y que cuando pulsas
+            pst.setString(4, jTextFieldID_Producto.getText());              //el boton Modificar Cliente_Producto, te lo modifica en la BBDD de tal forma que se actualiza la tabla con esa modificación.
             pst.setString(5, jTextFieldDNI_Cliente.getText());
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Cliente_Producto Modificado");
@@ -671,8 +671,8 @@ public class Conectores extends javax.swing.JFrame {
             pst = gc.conn1.prepareStatement("DELETE FROM cliente_producto  WHERE id_producto=? AND DNI_cliente=?");
             pst.setInt(1, Integer.parseInt(jTextFieldID_Producto.getText()));
             pst.setInt(2, Integer.parseInt(jTextFieldDNI_Cliente.getText()));
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Cliente_Producto Borrado");
+            pst.executeUpdate();                                                    //Este método lo que hace es Eliminar la información sobre un Cliente_Producto en la tabla Cliente_Producto
+            JOptionPane.showMessageDialog(null, "Cliente_Producto Borrado");        //en la BBDD.                                                                              
             gc.conn1.commit();
         }
     catch(SQLException ex){
@@ -692,7 +692,7 @@ public class Conectores extends javax.swing.JFrame {
         PreparedStatement pst;
         ResultSet rs;
         DefaultTableModel modelo = new DefaultTableModel();
-        jTable1.setModel(modelo);
+        jTableResultados.setModel(modelo);
         try{
             pst = gc.conn1.prepareStatement("SELECT * FROM clientes WHERE DNI=? OR Nombre=?");
             pst.setString(1,jTextFieldBuscarCliente.getText());
@@ -701,7 +701,7 @@ public class Conectores extends javax.swing.JFrame {
             modelo.addColumn("DNI");
             modelo.addColumn("Nombre");
             modelo.addColumn("Apellidos");
-            modelo.addColumn("Correo");
+            modelo.addColumn("Correo");                     //Este método te realiza una busqueda en la BBDD en la tabla clientes; y te muestra la información sobre ese cliente en el jTable
             modelo.addColumn("num_Contacto");
             modelo.addColumn("Direccion");
             
@@ -732,7 +732,7 @@ public class Conectores extends javax.swing.JFrame {
         PreparedStatement pst;
         ResultSet rs;
         DefaultTableModel modelo = new DefaultTableModel();
-        jTable1.setModel(modelo);
+        jTableResultados.setModel(modelo);
         try{
             pst = gc.conn1.prepareStatement("SELECT * FROM producto WHERE id_producto=? OR nombre_producto=?");
             pst.setString(1,jTextFieldBuscarProducto.getText());
@@ -740,7 +740,7 @@ public class Conectores extends javax.swing.JFrame {
             rs = pst.executeQuery();
             modelo.addColumn("id_producto");
             modelo.addColumn("nombre_producto");
-            modelo.addColumn("marca");
+            modelo.addColumn("marca");                                  //Este método te realiza una busqueda en la BBDD en la tabla producto; y te muestra la información sobre ese producto en el jTable
             modelo.addColumn("fecha_venta");
             
             
@@ -767,7 +767,7 @@ public class Conectores extends javax.swing.JFrame {
         PreparedStatement pst;
         ResultSet rs;
         DefaultTableModel modelo = new DefaultTableModel();
-        jTable1.setModel(modelo);
+        jTableResultados.setModel(modelo);
         try{
             pst = gc.conn1.prepareStatement("SELECT * FROM cliente_producto WHERE id_producto=? OR DNI_cliente=?");
             pst.setString(1,jTextFieldBuscarCliente_Producto.getText());
@@ -775,8 +775,8 @@ public class Conectores extends javax.swing.JFrame {
             rs = pst.executeQuery();
             modelo.addColumn("DNI_cliente");
             modelo.addColumn("id_producto");
-            modelo.addColumn("marca_producto");
-            modelo.addColumn("nombre_producto");
+            modelo.addColumn("marca_producto");                     //Este método te realiza una busqueda en la BBDD en la tabla cliente__producto; y te muestra la información sobre                                                         
+            modelo.addColumn("nombre_producto");                    //esa relación entre el cliente y el producto en el jTable
             modelo.addColumn("fecha_venta");
             
             if(rs.next()){
@@ -850,7 +850,7 @@ public class Conectores extends javax.swing.JFrame {
     private javax.swing.JButton jButtonMostrarTablaClientes;
     private javax.swing.JButton jButtonMostrarTablaProducto;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableResultados;
     private javax.swing.JTextField jTextFieldApellidos;
     private javax.swing.JTextField jTextFieldBuscarCliente;
     private javax.swing.JTextField jTextFieldBuscarCliente_Producto;
