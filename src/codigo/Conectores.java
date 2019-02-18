@@ -74,9 +74,9 @@ public class Conectores extends javax.swing.JFrame {
         jButtonBuscar_Producto = new javax.swing.JButton();
         jTextFieldBuscarCliente_Producto = new javax.swing.JTextField();
         jButtonBuscar_Cliente_Producto = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBoxCliente = new javax.swing.JComboBox<>();
+        jComboBoxProducto = new javax.swing.JComboBox<>();
+        jComboBoxCliente_Producto = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -238,16 +238,16 @@ public class Conectores extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "Apellidos" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "Apellidos" }));
+        jComboBoxCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jComboBoxClienteActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "id_producto", "nombre_producto" }));
+        jComboBoxProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "id_producto", "nombre_producto" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI_cliente", "marca_producto", "id_producto" }));
+        jComboBoxCliente_Producto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI_cliente", "marca_producto", "id_producto" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -300,9 +300,9 @@ public class Conectores extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 1, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jComboBoxProducto, javax.swing.GroupLayout.Alignment.TRAILING, 0, 1, Short.MAX_VALUE)
+                                    .addComponent(jComboBoxCliente, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBoxCliente_Producto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextFieldBuscarProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
@@ -352,7 +352,7 @@ public class Conectores extends javax.swing.JFrame {
                                 .addComponent(jButtonAnnadir_Producto)
                                 .addComponent(jTextFieldBuscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButtonBuscar_Cliente)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jComboBoxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(jButtonMostrarTablaClientes)
@@ -369,7 +369,7 @@ public class Conectores extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButtonBuscar_Producto)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jComboBoxProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -387,7 +387,7 @@ public class Conectores extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextFieldBuscarCliente_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButtonBuscar_Cliente_Producto)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jComboBoxCliente_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -722,7 +722,7 @@ public class Conectores extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         jTableResultados.setModel(modelo);
         try{
-            pst = gc.conn1.prepareStatement("SELECT * FROM clientes WHERE "+jComboBox1.getSelectedItem()+"=?");
+            pst = gc.conn1.prepareStatement("SELECT * FROM clientes WHERE "+jComboBoxCliente.getSelectedItem()+"=?");
             pst.setString(1,jTextFieldBuscarCliente.getText()); 
             rs = pst.executeQuery();
             modelo.addColumn("DNI");
@@ -762,7 +762,7 @@ public class Conectores extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         jTableResultados.setModel(modelo);
         try{
-            pst = gc.conn1.prepareStatement("SELECT * FROM producto WHERE "+jComboBox2.getSelectedItem()+"=?");
+            pst = gc.conn1.prepareStatement("SELECT * FROM producto WHERE "+jComboBoxProducto.getSelectedItem()+"=?");
             pst.setString(1,jTextFieldBuscarProducto.getText());
             rs = pst.executeQuery();
             modelo.addColumn("id_producto");
@@ -796,7 +796,7 @@ public class Conectores extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         jTableResultados.setModel(modelo);
         try{
-            pst = gc.conn1.prepareStatement("SELECT * FROM cliente_producto WHERE "+jComboBox3.getSelectedItem()+"=?");
+            pst = gc.conn1.prepareStatement("SELECT * FROM cliente_producto WHERE "+jComboBoxCliente_Producto.getSelectedItem()+"=?");
             pst.setString(1,jTextFieldBuscarCliente_Producto.getText());
             rs = pst.executeQuery();
             modelo.addColumn("DNI_cliente");
@@ -824,9 +824,9 @@ public class Conectores extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonBuscar_Cliente_ProductoMousePressed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jComboBoxClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClienteActionPerformed
         
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jComboBoxClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -879,9 +879,9 @@ public class Conectores extends javax.swing.JFrame {
     private javax.swing.JButton jButtonMostrarTablaCliente_Producto;
     private javax.swing.JButton jButtonMostrarTablaClientes;
     private javax.swing.JButton jButtonMostrarTablaProducto;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBoxCliente;
+    private javax.swing.JComboBox<String> jComboBoxCliente_Producto;
+    private javax.swing.JComboBox<String> jComboBoxProducto;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableResultados;
     private javax.swing.JTextField jTextFieldApellidos;
