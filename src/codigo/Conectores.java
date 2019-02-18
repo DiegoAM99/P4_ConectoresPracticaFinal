@@ -561,7 +561,7 @@ public class Conectores extends javax.swing.JFrame {
         try{
             gc.conn1.setAutoCommit(false);
             PreparedStatement pst;
-            pst = gc.conn1.prepareStatement("Update producto  SET  nombre_producto =?, marca =?, fecha_venta =?,  WHERE id_producto ='?'");
+            pst = gc.conn1.prepareStatement("Update producto  SET  nombre_producto =?, marca =?, fecha_venta =? WHERE id_producto=?");
             pst.setString(1, jTextFieldnombre_producto.getText());
             pst.setString(2, jTextFieldmarca.getText());
             pst.setString(3, jTextFieldfecha_venta.getText());
@@ -641,11 +641,12 @@ public class Conectores extends javax.swing.JFrame {
         try{
             gc.conn1.setAutoCommit(false);
             PreparedStatement pst;
-            pst = gc.conn1.prepareStatement("Update cliente_producto  SET  nombre_producto =?, marca_producto =?,  WHERE id_producto =? AND DNI_cliente =?");
+            pst = gc.conn1.prepareStatement("Update cliente_producto  SET  nombre_producto =?, marca_producto =?, fecha_venta=?  WHERE id_producto =? AND DNI_cliente =?");
             pst.setString(1, jTextFieldNombre_Producto.getText());
             pst.setString(2, jTextFieldMarca_Producto.getText());
-            pst.setString(3, jTextFieldID_Producto.getText());
-            pst.setString(4, jTextFieldDNI_Cliente.getText());
+            pst.setString(3, jTextFieldFecha_Venta.getText());
+            pst.setString(4, jTextFieldID_Producto.getText());
+            pst.setString(5, jTextFieldDNI_Cliente.getText());
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Cliente_Producto Modificado");
             gc.conn1.commit();

@@ -32,7 +32,7 @@ public class GestorConexion {
         try{
             String url="jdbc:mysql://localhost:3306/tienda_instrumentos?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";          
             String user = "root";
-            String password = "root";
+            String password = "";
             
             conn1 = (Connection) DriverManager.getConnection(url, user, password);
             if(conn1 != null){
