@@ -744,7 +744,7 @@ public class Conectores extends javax.swing.JFrame {
                 modelo.addRow(obj1);
                 obj1 = null;
             }else{
-                JOptionPane.showMessageDialog(null, "No existe este cliente con el DNI");
+                JOptionPane.showMessageDialog(null, "No existe esa información");
             }  
         }catch(SQLException e){
             e.printStackTrace();
@@ -783,7 +783,7 @@ public class Conectores extends javax.swing.JFrame {
                 obj1 = null;
             
             }else{
-                JOptionPane.showMessageDialog(null, "No existe este producto con el ID");
+                JOptionPane.showMessageDialog(null, "No existe esa información");
             }  
         }catch(SQLException e){
             e.printStackTrace();
@@ -817,7 +817,7 @@ public class Conectores extends javax.swing.JFrame {
                 modelo.addRow(obj1);
                 obj1 = null;
             }else{
-                JOptionPane.showMessageDialog(null, "No existe ni este cliente con el DNI ni este producto con ID");
+                JOptionPane.showMessageDialog(null, "No existe esa información");
             }  
         }catch(SQLException e){
             e.printStackTrace();
